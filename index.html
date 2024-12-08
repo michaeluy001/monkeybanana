@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find the Monkey</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Caveat:wght@400..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <audio id="monkey-sound" src="./sounds/Monkey scream.wav" ></audio>
+    <audio id="fail-guess" src="./sounds/Fail guess.wav" ></audio>
+    <audio id="jungle-music" src="./sounds/Jungle music.wav" ></audio>
+    <audio id="jungle-sfx" src="./sounds/Jungle sfx.wav" ></audio>
+    <style>
+
+ 
+
+        .platform {
+            align-items:center;
+            justify-content: center;
+            display:flex;
+            flex-direction: column;
+            background-image: url("game background.jpg");
+            background-size: 50%;
+        }
+
+        .grid {
+            width: 600px;
+            display:grid;
+            grid: repeat(3, 200px) / auto-flow;
+            border: 5px ridge gray;
+            border-radius: 10%;
+            background-color: #FFBF46;
+        }
+
+        .grid > li {
+            list-style: none;
+            border-radius: 50%;
+            background-color: beige;
+            border: 2px solid black;
+            background-size: 200px;
+        }
+
+        .dashboard {
+            display: flex;
+            flex-direction: row;
+            align-content: center;
+            justify-content: center;
+            gap: 30px;
+            
+        
+        }
+
+        #score-board {
+            align-content: center;
+            text-align: center;
+            width: 550px;
+            height: 200px;
+            margin-top: 0px;
+            padding: 20px;
+            font-family: "Caveat Brush", cursive;
+            background-image: url("jungle-board.jpg");
+            background-size:100%;
+            background-position: center;
+           
+            
+        }
+
+        #score {
+            font-size: 3rem;
+            padding:10px;
+            margin: 20px;
+            color: #95190c;
+        }
+
+        #status {
+            margin-bottom: 0px;
+            font-size: 2em;
+            color: #95190c;
+            font-family: "Caveat Brush", cursive;
+            font-weight: bolder;
+            font-style: normal;
+        }
+
+    </style>
+
+
+</head>
+<body>
+    <div class="platform"> 
+        <div class ="grid">
+            <li id="Cell-1"> </li>
+            <li id="Cell-2"> </li>
+            <li id="Cell-3"> </li>
+            <li id="Cell-4"> </li>
+            <li id="Cell-5"> </li>
+            <li id="Cell-6"> </li>
+            <li id="Cell-7"> </li>
+            <li id="Cell-8"> </li>
+            <li id="Cell-9"> </li>      
+        </div>
+
+    </div>
+<hr>
+
+    <div class="dashboard">
+        <div id="score-board" >
+            <p id= "status">Click a cell to start the game</p>
+            <p id="score"></p> 
+        </div>
+    </div>
+
+</body>
+
+
+</html>
+<script src="scripts/main.js"></script>
